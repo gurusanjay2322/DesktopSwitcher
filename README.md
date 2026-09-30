@@ -2,6 +2,8 @@
 
 Jump straight to any Windows virtual desktop with **Ctrl + Win + number**, with a smooth fade transition instead of sliding through every desktop in between.
 
+![Demo: jumping between desktops with Ctrl + Win + number](docs/demo.gif)
+
 | Shortcut | Action |
 |---|---|
 | `Ctrl + Win + 1` … `9` | Go to desktop 1 … 9 |
