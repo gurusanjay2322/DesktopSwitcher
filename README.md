@@ -17,30 +17,44 @@ If you press a number higher than the desktops you have, it goes to the last one
 - **Windows 11 24H2 or newer** (see [Windows 10 / older Windows 11](#windows-10--older-windows-11) below)
 - **[AutoHotkey v2](https://www.autohotkey.com/)** (v1 will not work)
 
-## Setup
+## Install
 
-1. Install AutoHotkey v2 from [autohotkey.com](https://www.autohotkey.com/), or run:
-   ```powershell
-   winget install AutoHotkey.AutoHotkey
-   ```
-2. Download this repo (**Code → Download ZIP**, then extract it) or clone it.
-   Keep `DesktopSwitcher.ahk` and `VirtualDesktopAccessor.dll` in the same folder.
-3. Double-click `DesktopSwitcher.ahk`. A green **H** icon appears in the system tray.
-4. Make sure you have more than one desktop (**Win + Tab → New desktop**), then try `Ctrl + Win + 2`.
+### Quick install (recommended)
 
-### Start automatically with Windows
+Open PowerShell and run:
 
-1. Press **Win + R**, type `shell:startup`, press Enter.
-2. Right-click `DesktopSwitcher.ahk` → **Show more options → Create shortcut**, and move the shortcut into the folder that opened.
+```powershell
+irm https://raw.githubusercontent.com/gurusanjay2322/DekstopSwitcher/main/install.ps1 | iex
+```
 
-### Stop or remove
+This installs AutoHotkey v2 (via winget) if you don't have it, copies Desktop Switcher to `%LOCALAPPDATA%\DesktopSwitcher`, makes it start with Windows, and starts it. A green **H** icon appears in the system tray.
+
+Make sure you have more than one desktop (**Win + Tab → New desktop**), then try `Ctrl + Win + 2`.
+
+### From the zip
+
+1. Download `DesktopSwitcher.zip` from the [latest release](https://github.com/gurusanjay2322/DekstopSwitcher/releases/latest) and extract it.
+2. Double-click `install.cmd`.
+
+### Manual
+
+1. Install [AutoHotkey v2](https://www.autohotkey.com/) (`winget install AutoHotkey.AutoHotkey`).
+2. Download the release zip or clone this repo. Keep `DesktopSwitcher.ahk` and `VirtualDesktopAccessor.dll` in the same folder.
+3. Double-click `DesktopSwitcher.ahk`.
+4. To start it with Windows: press **Win + R**, type `shell:startup`, and put a shortcut to `DesktopSwitcher.ahk` in the folder that opens.
+
+### Stop or uninstall
 
 - Stop: right-click the tray **H** icon → **Exit**.
-- Remove from startup: delete the shortcut from the `shell:startup` folder.
+- Uninstall (if you used the installer):
+  ```powershell
+  & ([scriptblock]::Create((irm https://raw.githubusercontent.com/gurusanjay2322/DekstopSwitcher/main/install.ps1))) -Uninstall
+  ```
+  This stops it, removes the startup shortcut and deletes `%LOCALAPPDATA%\DesktopSwitcher`. AutoHotkey itself is left installed.
 
 ## Customizing the transition
 
-Open `DesktopSwitcher.ahk` in a text editor, change the values near the top, then right-click the tray icon → **Reload Script**.
+Open `DesktopSwitcher.ahk` in a text editor (installed copy: `%LOCALAPPDATA%\DesktopSwitcher`), change the values near the top, then right-click the tray icon → **Reload Script**.
 
 | Setting | Default | What it does |
 |---|---|---|
