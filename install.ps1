@@ -1,9 +1,9 @@
 # Desktop Switcher installer
 #
 # Install (latest release):
-#   irm https://raw.githubusercontent.com/gurusanjay2322/DekstopSwitcher/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/gurusanjay2322/DesktopSwitcher/main/install.ps1 | iex
 # Uninstall:
-#   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/gurusanjay2322/DekstopSwitcher/main/install.ps1))) -Uninstall
+#   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/gurusanjay2322/DesktopSwitcher/main/install.ps1))) -Uninstall
 #
 # Run from an extracted release zip, it installs the files next to it instead of downloading.
 
@@ -16,7 +16,7 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$Repo = 'gurusanjay2322/DekstopSwitcher'
+$Repo = 'gurusanjay2322/DesktopSwitcher'
 $ZipUrl = "https://github.com/$Repo/releases/latest/download/DesktopSwitcher.zip"
 $InstallDir = Join-Path $env:LOCALAPPDATA 'DesktopSwitcher'
 $ScriptName = 'DesktopSwitcher.ahk'

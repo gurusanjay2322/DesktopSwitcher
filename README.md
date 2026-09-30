@@ -24,7 +24,7 @@ If you press a number higher than the desktops you have, it goes to the last one
 Open PowerShell and run:
 
 ```powershell
-irm https://raw.githubusercontent.com/gurusanjay2322/DekstopSwitcher/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/gurusanjay2322/DesktopSwitcher/main/install.ps1 | iex
 ```
 
 This installs AutoHotkey v2 (via winget) if you don't have it, copies Desktop Switcher to `%LOCALAPPDATA%\DesktopSwitcher`, makes it start with Windows, and starts it. A green **H** icon appears in the system tray.
@@ -33,7 +33,7 @@ Make sure you have more than one desktop (**Win + Tab → New desktop**), then t
 
 ### From the zip
 
-1. Download `DesktopSwitcher.zip` from the [latest release](https://github.com/gurusanjay2322/DekstopSwitcher/releases/latest) and extract it.
+1. Download `DesktopSwitcher.zip` from the [latest release](https://github.com/gurusanjay2322/DesktopSwitcher/releases/latest) and extract it.
 2. Double-click `install.cmd`.
 
 ### Manual
@@ -48,7 +48,7 @@ Make sure you have more than one desktop (**Win + Tab → New desktop**), then t
 - Stop: right-click the tray **H** icon → **Exit**.
 - Uninstall (if you used the installer):
   ```powershell
-  & ([scriptblock]::Create((irm https://raw.githubusercontent.com/gurusanjay2322/DekstopSwitcher/main/install.ps1))) -Uninstall
+  & ([scriptblock]::Create((irm https://raw.githubusercontent.com/gurusanjay2322/DesktopSwitcher/main/install.ps1))) -Uninstall
   ```
   This stops it, removes the startup shortcut and deletes `%LOCALAPPDATA%\DesktopSwitcher`. AutoHotkey itself is left installed.
 
